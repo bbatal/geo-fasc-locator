@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Google Maps Type-Ahead Search</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1ZkFouCHsxdjHEUWg6HtRTVmtnyJKLOs&libraries=places"></script>
   </head>
   <body>
     <input id="search" type="text" placeholder="Enter a location">
@@ -28,6 +28,25 @@
           });
           
         autocomplete.addListener('place_changed', onPlaceChanged);
+        
+        // Create the markers array
+        var markers = [];
+
+        // Add True West Coffee marker to the markers array
+        var trueWestCoffee = new google.maps.Marker({
+          position: { lat: 39.3957, lng: -84.5671 },
+          title: "True West Coffee",
+          map: map
+        });
+        markers.push(trueWestCoffee);
+
+        // Add Starbucks marker to the markers array
+        var starbucks = new google.maps.Marker({
+          position: { lat: 39.4063, lng: -84.5713 },
+          title: "Starbucks",
+          map: map
+        });
+        markers.push(starbucks);
       }
       
       function onPlaceChanged() {
@@ -73,6 +92,6 @@
         markers = [];
       }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1ZkFouCHsxdjHEUWg6HtRTVmtnyJKLOs&libraries=places&callback=initMap"></script>
   </body>
 </html>
