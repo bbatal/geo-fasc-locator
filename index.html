@@ -3,21 +3,16 @@
   <head>
     <title>Google Maps Type-Ahead Search</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=putYaOwnApiKeyBrothar&libraries=places"></script>
-
-    <style>
-      /* Add custom CSS styles for the input field */
-      #search {
-        font-size: 1.5em;
-        width: 50%;
-        padding: 0.5em;
-        margin: 0.5em;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <input id="search" type="text" placeholder="Enter a location">
+    <div id="floating-input">
+      <input id="search" type="text" placeholder="Enter a location">
+    </div>
     <div id="map" style="height: 500px;"></div>
     <div id="info"></div>
+    <div id="hours"></div>
+
 
     <!-- Import the external maps.js file -->
     <script src="search.js"></script>
