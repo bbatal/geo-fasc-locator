@@ -2,16 +2,17 @@
 <html>
   <head>
     <title>Google Maps Type-Ahead Search</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=putYaOwnApiKeyBrothar&libraries=places"></script>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div id="floating-input">
       <input id="search" type="text" placeholder="Enter a location">
+      <div id="info-container">
+        <div id="info"></div>
+        <div id="hours"></div>
+      </div>
     </div>
-    <div id="map" style="height: 500px;"></div>
-    <div id="info"></div>
-    <div id="hours"></div>
+    <div id="map"></div>
 
 
     <!-- Import the external maps.js file -->
