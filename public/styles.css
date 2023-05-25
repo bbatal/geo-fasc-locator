@@ -1,0 +1,61 @@
+html,
+body,
+#map {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add custom CSS styles for the input field */
+#search {
+    font-size: 1.2em;
+    width: 100%;
+    padding: 0.8em;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-family: Roboto, Arial, sans-serif;
+    outline: none;
+    box-sizing: border-box; /* Add this line to fix the width issue */
+}
+
+/* Add custom CSS styles for the input field placeholder */
+#search::placeholder {
+    color: #999;
+}
+
+/* Position the input field above the map */
+#floating-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* Change the background color to semi-transparent */
+    padding: 10px;
+    border-radius: 0;
+    width: 35%;
+    height: 100vh;
+    z-index: 100;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+#info-container {
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+#info,
+#hours {
+    margin: 5px 0;
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+    #search {
+        font-size: 1.5em;
+        padding: 1em;
+    }
+}

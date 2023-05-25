@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Maps Type-Ahead Search</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="floating-input">
+      <input id="search" type="text" placeholder="Enter a location">
+      <div id="info-container">
+        <div id="info"></div>
+        <div id="hours"></div>
+      </div>
+    </div>
+    <div id="map"></div>
+
+
+    <!-- Import the external maps.js file -->
+    <script src="search.js"></script>
+    <script src="places.js"></script>
+    <script src="init.js"></script>
+    <script src="globals.js"></script>
+
+
+    <script>
+    fetch('/.netlify/functions/token-hider')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+            let script = document.createElement('script');
+            script.src = `${data.API_URL}?key=${data.API_TOKEN}&libraries=places&callback=initMap`;
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+        });
+  </script>
+
+  </body>
+</html>
