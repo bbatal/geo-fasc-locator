@@ -1,7 +1,7 @@
    function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 39.3995, lng: -84.561335},
-          zoom: 15
+          center: {lat: 43.290367, lng: -79.8255196},
+          zoom: 11.27
         });
         infoWindow = new google.maps.InfoWindow();
         places = new google.maps.places.PlacesService(map);
@@ -21,24 +21,12 @@
           });
           
         autocomplete.addListener('place_changed', onPlaceChanged);
-        
-        searchPlace(`
-          True West Coffee,
-          313 Main St,
-          Hamilton, OH, 45013
-          `, function(place) {
-          var marker = createMarker(place);
-          markers.push(marker);
-        });
 
-        // Search for Waffle House
-        searchPlace(`
-          Waffle House,
-          829 High St,
-          Hamilton, OH, 45011
-          `, function(place) {
-          var marker = createMarker(place);
-          markers.push(marker);
-        });
-
+        // Populates markers based on list of Fasc locations in places.js
+        fascLocations.forEach((fasc) => {
+          searchPlace(fasc, function(place) {
+            let marker = createMarker(place);
+            markers.push(marker);
+          })
+        })
       }

@@ -1,7 +1,7 @@
       var map, places, infoWindow, directionsService, directionsRenderer;
       var markers = [];
       var autocomplete;
-      var countryRestrict = {country: 'us'};
+      var countryRestrict = {country: 'ca'};
              // Create a new PlacesService object
     var placesService;
       
